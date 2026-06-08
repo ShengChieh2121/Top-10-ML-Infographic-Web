@@ -1,0 +1,81 @@
+2026-06-08 工作紀錄 Log
+
+主題：機器學習十大演算法互動研讀平台 MVP
+
+今天完成內容：
+
+1. 建立專案架構
+   - 建立前後端分離的專案結構。
+   - 前端放在 frontend/，後端放在 backend/。
+   - 使用 sample JSON 作為 MVP 階段的資料來源。
+
+2. 建立後端 FastAPI
+   - 使用 FastAPI、Pydantic、Uvicorn 建立後端服務。
+   - 建立主要 API：
+     - GET /api/health
+     - GET /api/chapters
+     - GET /api/chapters/{chapter_id}
+     - GET /api/quiz/{chapter_id}
+     - GET /api/glossary
+     - GET /api/search?q=
+   - 設定 CORS，讓前端可以從 localhost:3000 呼叫後端 API。
+
+3. 建立後端資料與模型
+   - 在 backend/models/schemas.py 定義資料模型。
+   - 建立 Chapter、Quiz、GlossaryTerm、SearchResult 等資料結構。
+   - 在 backend/data/ 建立假資料：
+     - chapters.json：十大機器學習演算法章節資料
+     - quizzes.json：章節測驗資料
+     - glossary.json：名詞解釋資料
+
+4. 建立前端 Next.js 應用
+   - 使用 Next.js、TypeScript、Tailwind CSS 建立前端。
+   - 使用 App Router 規劃頁面路由。
+   - 建立共用版面與側邊導覽列。
+
+5. 完成前端主要頁面
+   - 首頁：平台介紹與十大演算法卡片。
+   - Dashboard：顯示完成章節數、平均進度、測驗摘要與推薦下一章。
+   - 章節列表：列出十大機器學習演算法。
+   - 單一章節頁：顯示章節內容、研讀重點、完成狀態與進度。
+   - 測驗頁：建立選擇題 UI 與答案解析預留區。
+   - Glossary：顯示機器學習名詞解釋。
+   - PDF Viewer：建立 PDF 教材嵌入預留頁。
+   - 搜尋頁：建立搜尋 UI，並串接後端搜尋 API。
+
+6. 建立前端共用元件與 API 串接
+   - 建立 Sidebar、ChapterCard、ProgressBar、SearchPanel 等元件。
+   - 在 frontend/lib/api.ts 建立 API 呼叫函式。
+   - 加入 fallback data，讓後端未啟動時前端仍可顯示基本資料。
+
+7. 補充 README 與專案文件
+   - 新增 README.md，說明專案目的、功能特色、技術架構、啟動方式與 API 清單。
+   - 補上後續可擴充方向，例如 PDF 解析、學習進度紀錄、全文搜尋、登入與推薦功能。
+
+8. 整理 Git 與 GitHub 上傳準備
+   - 建立 .gitignore，排除 node_modules、.next、venv、cache、.DS_Store 與 pyc 檔案。
+   - 初始化本機 Git repository。
+   - 將分支整理為 main。
+   - 建立 initial commit：
+     - commit id: b1a6cf5
+     - message: Initial commit
+   - 設定 GitHub 遠端位置：
+     - https://github.com/ShengChieh2121/L4-HW2.git
+
+目前狀態：
+
+- 本機專案已完成第一版 MVP。
+- README 已整理完成。
+- Git commit 已建立完成。
+- 尚未 push 到 GitHub，原因是本機尚未完成 GitHub 認證。
+
+下一步：
+
+1. 在本機設定 GitHub SSH key。
+2. 到 GitHub 建立新的 repository：L4-HW2。
+3. 將 remote 改成 SSH：
+   git remote set-url origin git@github.com:ShengChieh2121/L4-HW2.git
+4. 測試 SSH 連線：
+   ssh -T git@github.com
+5. 上傳專案：
+   git push -u origin main
