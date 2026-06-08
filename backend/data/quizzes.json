@@ -1,0 +1,40 @@
+{
+  "linear-regression": {
+    "chapter_id": "linear-regression",
+    "title": "線性回歸小測驗",
+    "score": 85,
+    "questions": [
+      {
+        "id": "q1",
+        "question": "線性回歸最常用來預測哪一類目標？",
+        "options": [
+          { "id": "a", "text": "連續數值" },
+          { "id": "b", "text": "文字段落" },
+          { "id": "c", "text": "圖片像素" },
+          { "id": "d", "text": "資料庫 schema" }
+        ],
+        "answer": "a",
+        "explanation": "線性回歸主要用於預測連續數值，例如房價或銷售量。"
+      }
+    ]
+  },
+  "decision-tree": {
+    "chapter_id": "decision-tree",
+    "title": "決策樹小測驗",
+    "score": null,
+    "questions": [
+      {
+        "id": "q1",
+        "question": "決策樹的主要優點之一是什麼？",
+        "options": [
+          { "id": "a", "text": "完全不需要資料" },
+          { "id": "b", "text": "容易解釋決策規則" },
+          { "id": "c", "text": "只能做影像生成" },
+          { "id": "d", "text": "不可能過擬合" }
+        ],
+        "answer": "b",
+        "explanation": "決策樹可用樹狀規則呈現，因此容易被人理解。"
+      }
+    ]
+  }
+}
